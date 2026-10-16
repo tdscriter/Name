@@ -1,2 +1,7 @@
-# Name
-Idk
+set RV "$HOME/Documentos/GamesW/red_valley"
+rm -f "$RV/gzdoom"
+test -f "$RV/freedoom2.wad" || cp "$HOME/Documentos/GamesW/the pink valley starter/freedoom2.wad" "$RV/"
+cp "$RV/red_valley.ini" "$RV/red_valley_backup.ini"
+cp "$RV/red_valley.ini" "$RV/gzdoom.ini"
+grep -q "REDVALLEYv11.pk3" "$RV/gzdoom.ini" || printf '\n[Global.Autoload]\nPath=./REDVALLEYv11.pk3\n' >> "$RV/gzdoom.ini"
+echo "INI ARREGLADO"
